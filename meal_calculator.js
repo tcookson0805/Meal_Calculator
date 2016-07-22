@@ -33,7 +33,6 @@ Table.prototype.getBill = function(tax, tip){
   for(var i = 0; i < dinerArray.length; i++){
     var diner = dinerArray[i];
     var taxOwed = diner.mealCost * (tax/100);
-    console.log(taxOwed)
     diner.taxOwed = taxOwed;
     receipt.total = receipt.total + (diner.mealCost + taxOwed);
   }
@@ -49,7 +48,6 @@ Table.prototype.getBill = function(tax, tip){
   }
   
   this.receipt = receipt;
-  console.log(this);
 }
 
 ///// DINER CONSTRUCTOR FUNCTION /////
@@ -94,7 +92,7 @@ Tom.addDish('gnocchi');
 
 table1.getBill(5, 20);
 
-
+console.log('RECEIPT', table1.receipt)
 
 
 
